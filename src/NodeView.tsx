@@ -95,6 +95,7 @@ export default class NodeView extends React.PureComponent<IProps, IState> {
           <FlatList
             data={rootChildren}
             renderItem={this.renderItem}
+            ListHeaderComponent={this.props.level === 0 ? this.props.renderHeader : null}
             extraData={this.props.extraData}
             keyExtractor={(item: INode) => item._internalId}
           />
